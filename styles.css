@@ -2,8 +2,7 @@ body {
 	background-color: lightblue;
 }
 label{
-    display: inline-block;
-    float: left;
+    display: inline-block;    
     clear: left;
     width: 100px;
     text-align: right;
@@ -12,17 +11,20 @@ div {
   margin: auto;
   width: 30%;
   border: 5px solid black;
-  padding: 1px;
+  padding: 10px;
   text-align: center;
 }
 #button {
 	float: center;
+	
 }
 #basic_Form {
 	display:inline-table;
+
 	
 }
 #main_table {
 	border-style: solid;
 	width: 50%;
+	padding: 10px;
 }
