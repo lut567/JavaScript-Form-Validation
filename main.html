@@ -1,0 +1,48 @@
+<!--
+Shane Luttmann
+Dev 5 - Java Script
+-->
+
+<html>
+	<head>
+		<Title>Deliverable 4 - HTML</Title>
+		<link rel="stylesheet" href="styles.css">
+
+		<script>
+			function validateForm() {
+			  var f = document.forms["form"]["fname"].value;
+			  var l = document.forms["form"]["lname"].value;
+			  var e = document.forms["form"]["email"].value;
+			  var nf = f.replace(/\d+/g, '');
+			  var nl = l.replace(/\d+/g, ''); 
+			  
+			  if (nf == "") {
+				alert("Enter a valid First Name.");
+				return false;
+				} else if (nl == "") {
+				alert("Enter a valid Last Name.");
+				return false;
+				} else if (e == "") {
+				alert("Enter a valid Email Address.");
+				return false;
+				}
+				alert("Name: " + nf + " " + nl + " " + "Email: " + e);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<h1>Deliverable 4 - HTML</h1>
+			<p>This HTML displaies an HTML form.</p>
+			<h2>Customer Information</h2>	
+			
+			<form id="basic_form" name="form" onsubmit="return validateForm()" method="post">
+				<label>First Name:</label> <input type="text" name="fname"><br>
+				<label>Last Name:</label> <input type="text" name="lname"><br>
+				<label>Email:</label> <input type="text" name="email">
+				<br><br>
+				<input id="button" type="submit" value="Submit">
+			</form>
+		</div>		
+	</body>
+</html>
