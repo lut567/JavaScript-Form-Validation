@@ -10,23 +10,26 @@ Dev 5 - Java Script
 
 		<script>
 			function validateForm() {
-			  var f = document.forms["form"]["fname"].value;
-			  var l = document.forms["form"]["lname"].value;
-			  var e = document.forms["form"]["email"].value;
-			  var nf = f.replace(/\d+/g, '');
-			  var nl = l.replace(/\d+/g, ''); 
+			  var f = document.forms["form"]["fname"].value; <!-- Take first name from form --> 
+			  var l = document.forms["form"]["lname"].value; <!-- Take last name from form -->
+			  var e = document.forms["form"]["email"].value; <!-- Take email from form. -->
+			  var nf = f.replace(/\d+/g, ''); <!-- valadation where it makes sure first name has no numbers in it -->
+			  var nl = l.replace(/\d+/g, '');  <!-- validation where it makes sure laft name has no numbers in it -->
 			  
-			  if (nf == "") {
+			  if (nf == "") { <!-- if first name is blank alert the user and return false -->
 				alert("Enter a valid First Name.");
 				return false;
-				} else if (nl == "") {
+				} else if (nl == "") { <!-- else if last name is bank, alert the user and return false -->
 				alert("Enter a valid Last Name.");
 				return false;
-				} else if (e == "") {
+				} else if (e == "") { <!-- else if email is blank, alert the user and return false -->
 				alert("Enter a valid Email Address.");
 				return false;
 				}
+				else { <!-- Display the given info from the form -->
 				alert("Name: " + nf + " " + nl + " " + "Email: " + e);
+				return true;
+				}
 			}
 		</script>
 	</head>
@@ -36,10 +39,10 @@ Dev 5 - Java Script
 			<p>This HTML displays an HTML form and JavaScript Validation.</p>
 			<h2>Customer Information</h2>	
 			
-			<form id="basic_form" name="form" onsubmit="return validateForm()" method="post">
-				<label>First Name:</label> <input type="text" name="fname" placeholder="First Name"><br>
-				<label>Last Name:</label> <input type="text" name="lname" placeholder="Last Name"><br>
-				<label>Email:</label> <input type="text" name="email" placeholder="Email">
+			<form id="basic_form" name="form" onsubmit="return validateForm()" method="post"> <!-- create form and on submit, call the Javascript script -->
+				<label>First Name:</label> <input type="text" name="fname" placeholder="First Name"><br>  <!-- First name txtbox -->
+				<label>Last Name:</label> <input type="text" name="lname" placeholder="Last Name"><br> <!-- Last name textbox -->
+				<label>Email:</label> <input type="text" name="email" placeholder="Email"> <!-- email textbox -->
 				<br><br>
 				<input id="button" type="submit" value="Submit">
 			</form>
